@@ -1,0 +1,116 @@
+1.
+
+class Shape():
+	def __init__(self):
+	     pass
+	
+	def area(self):
+                    print(0)
+
+class Square(Shape):
+	def __init__(self,side):
+		Shape.__init__(self,side,side)
+		self.side = side
+s = Square(4)
+print s.area()
+
+
+2.
+
+
+>>>class Person:
+	def getGender(self):
+		print ("Unknown")
+
+		
+>>> class Male(Person):
+	def getGender(self):
+		print("Male")
+
+		
+>>> class Female(Person):
+	def getGender(self):
+		print("Female")
+
+		
+>>> male1 = Male()
+>>> female1 = Female()
+>>> male1.getGender()
+Male
+>>> female1.getGender()
+Female
+>>> male2 = Male()
+>>> male2.getGender()
+Male
+
+
+4.
+
+def create_pyramid(rows):
+	for i in range(rows):
+		print((' ' * ( rows- i - 1 ) + '*' * ( 2 * i + 1)))
+
+		
+>>> print((create_pyramid(5)))
+    *
+   ***
+  *****
+ *******
+*********
+None
+>>> def create_upside_down_pyramid(rows):
+	for i in reversed(list(range(rows))):
+		print((' ' * ( rows- i - 1 ) + '*' * ( 2 * i + 1)))
+
+>>> print((create_upside_down_pyramid(5)))
+*********
+ *******
+  *****
+   ***
+    *
+None
+
+
+5.
+
+class Coordinate(object):
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+
+    def getX(self):
+        
+        return self.x
+
+    def getY(self):
+        
+        return self.y
+
+    def __str__(self):
+        return '<' + str(self.getX()) + ',' + str(self.getY()) + '>'
+
+    def __eq__(self, other):
+        
+        assert type(other) == type(self)
+       
+        return self.getX() == other.getX() and self.getY() == other.getY()
+
+    def __repr__(self):
+        return 'Coordinate(' + str(self.getX()) + ',' + str(self.getY()) + ')'
+
+a = Coordinate(2,3) 
+b = Coordinate(4,5) 
+print a.getX()     
+print a.getY()      
+
+print b == a       
+print a == b        
+                    
+
+print a             
+
+print repr(a)
+
+
+
+
